@@ -10,10 +10,10 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     MessageOpenHelper coh;
-    ArrayList<Message> listOfCustomer;
+    ArrayList<Message> listOfMessage;
     ListView lv;
 
-    MessageAdapter customerAdapter;
+    MessageAdapter messageAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,11 +22,11 @@ public class MainActivity extends AppCompatActivity {
         lv=(ListView)findViewById(R.id.lv);
 
         coh=new MessageOpenHelper(this);
-        listOfCustomer=new ArrayList<Message>();
+        listOfMessage=new ArrayList<Message>();
 
-        Log.i("data", "list size is " + listOfCustomer.size());
+        Log.i("mosh", "list size is " + listOfMessage.size());
 
-        createCustomers();
+        createMessages();
 
 
     }
@@ -42,16 +42,16 @@ public class MainActivity extends AppCompatActivity {
         // TODO Auto-generated method stub
         super.onPause();
     }
-    public void createCustomers()
+    public void createMessages()
     {
         coh.open();
-        Message c1=new Message(0,"oren","davidi","tel-aviv","MOSHE");
-        c1=coh.createCustomer(c1);
-        listOfCustomer.add(c1);
+        Message c1=new Message(0,"12/100/2018","19:43","howareyoubro ?","shaked");
+        c1=coh.createMessage(c1);
+        listOfMessage.add(c1);
 
-        Message c2=new Message(0,"blibli","oli","ranat-aviv","MOSHE");
-        c2=coh.createCustomer(c2);
-        listOfCustomer.add(c2);
+        Message c2=new Message(0,"22/11/2017","14:25","whereareyou ?","eli");
+        c2=coh.createMessage(c2);
+        listOfMessage.add(c2);
         coh.close();
     }
 }

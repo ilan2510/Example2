@@ -22,7 +22,7 @@ public class MessageOpenHelper extends SQLiteOpenHelper {
     public static final String COLUMN_SAVEHOUR = "msgSaveHour";
     public static final String COLUMN_FROMCHAT = "fromWho";
 
-    private static final String CREATE_TABLE_CUSTOMER = "CREATE TABLE IF NOT EXISTS " +
+    private static final String CREATE_TABLE_MESSAGE = "CREATE TABLE IF NOT EXISTS " +
             TABLE_MESSAGE + "(" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_MESSAGE + " VARCHAR," + COLUMN_SAVEDAY + " VARCHAR,"
             + COLUMN_SAVEHOUR + " VARCHAR," + COLUMN_FROMCHAT + " VARCHAR " + ");";
 
@@ -39,7 +39,7 @@ public class MessageOpenHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(CREATE_TABLE_CUSTOMER);
+        db.execSQL(CREATE_TABLE_MESSAGE);
         Log.i("data", "Table customer created");
     }
 
@@ -55,7 +55,7 @@ public class MessageOpenHelper extends SQLiteOpenHelper {
         Log.i("data", "Database connection open");
     }
 
-    public Message createCustomer(Message c) {
+    public Message createMessage(Message c) {
         ContentValues values = new ContentValues();
         values.put(MessageOpenHelper.COLUMN_ID, c.getmessageId());
         values.put(MessageOpenHelper.COLUMN_MESSAGE, c.getMessage());

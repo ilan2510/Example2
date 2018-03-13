@@ -44,7 +44,7 @@ public class MessageAdapter extends ArrayAdapter {
         tvmsgSaveDay.setText(temp.getMsgSaveDay());
         tvmsgSaveHour.setText(temp.getMsgSaveHour());
         tvfromWhichChat.setText(temp.getFromWhichChat());
-        iv.setImageResource(R.mipmap.green);
+        //iv.setImageResource(R.mipmap.green);
         return view;
     }
 }
