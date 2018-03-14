@@ -24,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
         coh=new MessageOpenHelper(this);
         listOfMessage=new ArrayList<Message>();
 
-        Log.i("mosh", "list size is " + listOfMessage.size());
+        Log.d("mosh", "list size is " + listOfMessage.size());
+        Log.d("mosh", MessageOpenHelper.CREATE_TABLE_MESSAGE);
 
         createMessages();
 
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     public void createMessages()
     {
         coh.open();
-        Message c1=new Message(0,"12/100/2018","19:43","howareyoubro ?","shaked");
+        Message c1=new Message(0,"12/10/2018","19:43","howareyoubro ?","shaked");
         c1=coh.createMessage(c1);
         listOfMessage.add(c1);
 

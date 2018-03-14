@@ -12,7 +12,7 @@ import android.util.Log;
 
 public class MessageOpenHelper extends SQLiteOpenHelper {
 
-    public static final String DATABASENAME = "message.db";
+    public static final String DATABASENAME = "message.db2";
     public static final String TABLE_MESSAGE = "tblmessage";
     public static final int DATABASEVERSION = 1;
 
@@ -22,7 +22,7 @@ public class MessageOpenHelper extends SQLiteOpenHelper {
     public static final String COLUMN_SAVEHOUR = "msgSaveHour";
     public static final String COLUMN_FROMCHAT = "fromWho";
 
-    private static final String CREATE_TABLE_MESSAGE = "CREATE TABLE IF NOT EXISTS " +
+    public static final String CREATE_TABLE_MESSAGE = "CREATE TABLE IF NOT EXISTS " +
             TABLE_MESSAGE + "(" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_MESSAGE + " VARCHAR," + COLUMN_SAVEDAY + " VARCHAR,"
             + COLUMN_SAVEHOUR + " VARCHAR," + COLUMN_FROMCHAT + " VARCHAR " + ");";
 
@@ -39,8 +39,10 @@ public class MessageOpenHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        Log.d("mosh", "Table customer created 1");
+
         db.execSQL(CREATE_TABLE_MESSAGE);
-        Log.i("data", "Table customer created");
+        Log.d("mosh", "Table customer created 2");
     }
 
 
