@@ -1,5 +1,6 @@
 package com.example.ailan.example2;
 
+
 import android.content.Context;
 import android.content.res.Configuration;
 import android.graphics.Point;
@@ -7,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Display;
+import android.view.Window;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -41,6 +43,8 @@ public class MainActivity extends AppCompatActivity
         int width = size.x;
         int height = size.y;
         Log.d("size" , "size :" + width + " " + height);
+        int mosh = this.getWindow().getDecorView().getBottom();
+        Log.d("size" , "size :" + mosh);
 
     }
 
