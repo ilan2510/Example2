@@ -1,13 +1,18 @@
 package com.example.ailan.example2;
 
+import android.content.Context;
+import android.content.res.Configuration;
+import android.graphics.Point;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Display;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+{
 
     MessageOpenHelper coh;
     ArrayList<Message> listOfMessage;
@@ -15,7 +20,8 @@ public class MainActivity extends AppCompatActivity {
 
     MessageAdapter messageAdapter;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -29,6 +35,12 @@ public class MainActivity extends AppCompatActivity {
 
         createMessages();
 
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        int width = size.x;
+        int height = size.y;
+        Log.d("size" , "size :" + width + " " + height);
 
     }
 
@@ -43,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         // TODO Auto-generated method stub
         super.onPause();
     }
+
     public void createMessages()
     {
         coh.open();
