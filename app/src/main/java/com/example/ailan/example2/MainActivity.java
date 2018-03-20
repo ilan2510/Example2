@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity
     MessageOpenHelper coh;
     ArrayList<Message> listOfMessage;
     ListView lv;
+    int mosh;
 
     MessageAdapter messageAdapter;
     @Override
